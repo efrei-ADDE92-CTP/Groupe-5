@@ -16,7 +16,7 @@ Technologies : Github, Azure, Prometheus,
 - Create a github workflow
 - Use secrets
 - Azure :
-  - We used Azure Devops, generated our token to access to Azure
+  - We could have used Azure Devops, generate our token to access to Azure, it's already done by our organisation
   -
   
 4. Deploy it on Azure App
