@@ -18,6 +18,12 @@ jobs:
     name: Build container image
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker CLI
+        uses: actions/docker/cli@v2
+        with:
+          context: .
+    
       - name: Build the Docker image
         run: |
           docker build -t $(env.IMAGE_NAME) .
