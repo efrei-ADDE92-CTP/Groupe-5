@@ -15,7 +15,7 @@ jobs:
     steps: 
       - name: Login to ACR
         run: |
-          az acr login --name ${{ secrets.ACR_USERNAME }}
+          az acr login --name ${{ secrets.ACR_NAME }}
       - name: Login to ACR 2
         uses: azure/docker-login@v1
         with: 
