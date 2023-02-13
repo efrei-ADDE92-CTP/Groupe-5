@@ -21,22 +21,15 @@ jobs:
         with:
           azcliversion: latest
 
-      - name: Sign in to Azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Display Azure Subscriptions
-        run: |
-          az account list --output table
-      - name: Login to ACR
-        run: |
-          az acr login --name ${{ secrets.ACR_NAME }}
-      - name: Login to ACR 2
+      - name: Sign in to Azure        
         uses: azure/docker-login@v1
-        with: 
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+        with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - run: |
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/Group-5:${{ github.sha }}
+
       - name: Build the Docker image
         run: |
           docker build -t ${{ secrets.IMAGE_NAME }}:latest .
