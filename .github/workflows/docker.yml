@@ -13,16 +13,17 @@ jobs:
     name: Build container image
     runs-on: windows-latest
     steps: 
-      - name: Build the Docker image
+      - name: Login to ACR
+        run: |
+          az acr login --name ${{ secrets.ACR_USERNAME }}
+      - name: Login to ACR 2
         uses: azure/docker-login@v1
         with: 
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
+      - name: Build the Docker image
         run: |
           docker build -t ${{ secrets.IMAGE_NAME }}:latest .
-      - name: Login to ACR
-        run: |
-          az acr login --name ${{ secrets.ACR_NAME }}
       - name: Deploy the Docker image to ACR
         run: |
           docker push ${{ secrets.ACR_NAME }}/${{ secrets.IMAGE_NAME }}
