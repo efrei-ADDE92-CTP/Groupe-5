@@ -14,17 +14,20 @@ jobs:
     runs-on: windows-latest
     steps: 
       - name: Build the Docker image
-        working-directory: ./Dockerfile
+        uses: azure/docker-login@v1
+        with:
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
         run: |
           docker build -t ${{ secrets.IMAGE_NAME }}:latest .
       - name: Login to ACR
         run: |
-          az acr login --name $(env.ACR_NAME)
+          az acr login --name ${{ secrets.ACR_NAME }}
       - name: Deploy the Docker image to ACR
         run: |
           docker push ${{ secrets.ACR_NAME }}/${{ secrets.IMAGE_NAME }}
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
       - name: Get tag
         id: latest
         uses: dawidd6/action-get-tag@v1
