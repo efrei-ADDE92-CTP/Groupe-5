@@ -15,7 +15,7 @@ jobs:
     steps: 
       - name: Login to Azure
         run: |
-          az login 
+          az login --use-device-code
       - name: Login to ACR
         run: |
           az acr login --name ${{ secrets.ACR_NAME }}
