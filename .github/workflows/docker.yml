@@ -1,4 +1,4 @@
-name: Docker
+name: Deploy to ACR
 
 on:
   push:
@@ -6,12 +6,29 @@ on:
 
 env:
   IMAGE_NAME: luciebottin/iris-docker
+  ACR_NAME: acr-iris-docker
+  RESOURCE_GROUP: iris-group5
 
 jobs:
   build:
     name: Build container image
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: Set up Docker CLI
+        uses: actions/docker/cli@v2
+        with:
+          context: .
+      - name: Build the Docker image
+        run: |
+          docker build -t $(IMAGE_NAME) .
+      - name: Login to ACR
+        run: |
+          az acr login --name $(ACR_NAME)
+      - name: Deploy the Docker image to ACR
+        run: |
+          docker push $(ACR_NAME)/$(IMAGE_NAME)
+
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Get tag
@@ -31,3 +48,4 @@ jobs:
           build-args: |
             version=${{ steps.tag.outputs.tag }}
           tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.tag }}
+          
