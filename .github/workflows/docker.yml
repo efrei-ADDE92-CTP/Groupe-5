@@ -15,7 +15,7 @@ jobs:
     steps: 
       - name: Login to Azure
         run: |
-          az login --username ${{ secrets.ACR_USERNAME }} -- password ${{ secrets.ACR_PASSWORD }}
+          az login 
       - name: Login to ACR
         run: |
           az acr login --name ${{ secrets.ACR_NAME }}
