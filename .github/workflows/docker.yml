@@ -15,13 +15,13 @@ jobs:
     steps: 
       - name: Build the Docker image
         run: |
-          docker build -t $(secrets.IMAGE_NAME) .
+          docker build -t $({{ secrets.IMAGE_NAME }}) .
       - name: Login to ACR
         run: |
           az acr login --name $(env.ACR_NAME)
       - name: Deploy the Docker image to ACR
         run: |
-          docker push $(secrets.ACR_NAME)/$(secrets.IMAGE_NAME)
+          docker push $({{ secrets.ACR_NAME }})/$({{ secrets.IMAGE_NAME }})
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Get tag
