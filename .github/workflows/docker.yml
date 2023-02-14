@@ -11,16 +11,18 @@ on:
 jobs:
   build:
     name: Build container image
-    runs-on: windows-latest
-    steps: 
-      - name: Checkout code
-        uses: actions/checkout@v1
-
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Login via Azure CLI"
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
       - name: Set up Azure CLI
         uses: azure/cli@v1
         with:
           azcliversion: latest
-
       - name: Sign in to Azure        
         uses: azure/docker-login@v1
         with:
