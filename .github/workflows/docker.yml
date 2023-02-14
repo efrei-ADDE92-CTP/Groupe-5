@@ -43,7 +43,7 @@ jobs:
         with:
           containerAppName: container-app-groupe5 
           resourceGroup: ${{ secrets.RESOURCE_GROUP }}
-          imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:v1
+          imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:latest
           containerAppEnvironment: grp5-env
       - name: Update ACA
         uses: azure/CLI@v1
