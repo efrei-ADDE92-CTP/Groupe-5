@@ -24,14 +24,12 @@ jobs:
           login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-      - run: |
-          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/Group-5:${{ github.sha }}
       - name: Build the Docker image
         run: |
-          docker build -t ${{ secrets.IMAGE_NAME }}:latest .
+          docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:latest .
       - name: Deploy the Docker image to ACR
         run: |
-          docker push ${{ secrets.ACR_NAME }}/${{ secrets.IMAGE_NAME }}
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.ACR_NAME }}/${{ secrets.IMAGE_NAME }}:latest
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: Get tag
