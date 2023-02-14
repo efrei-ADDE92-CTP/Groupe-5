@@ -33,7 +33,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: Log into registry
-        uses: docker/login-action@v1
+        uses: azure/docker-login@v1
         with:
             login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
             username: ${{ secrets.REGISTRY_USERNAME }}
@@ -41,16 +41,16 @@ jobs:
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@47e03a783248cc0b5647f7ea03a8fb807fbc8e2f
         with:
-          containerAppName: container-app-groupe2 
+          containerAppName: container-app-groupe5 
           resourceGroup: ${{ secrets.RESOURCE_GROUP }}
-          imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/groupe2:v1
-          containerAppEnvironment: grp2-env
+          imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.IMAGE_NAME }}:v1
+          containerAppEnvironment: grp5-env
       - name: Update ACA
         uses: azure/CLI@v1
         with:
           inlineScript: |
             az containerapp update \
-              -n container-app-groupe2 \
+              -n container-app-groupe5 \
               -g ${{ secrets.RESOURCE_GROUP }} \
               --min-replicas 0 \
               --max-replicas 10 \
@@ -58,7 +58,7 @@ jobs:
               --scale-rule-type http \
               --scale-rule-http-concurrency 10
               az containerapp ingress enable \
-              -n container-app-groupe2  \
+              -n container-app-groupe5  \
               -g ${{ secrets.RESOURCE_GROUP }} \
               --type external \
               --allow-insecure \
