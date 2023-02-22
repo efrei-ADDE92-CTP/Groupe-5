@@ -24,3 +24,6 @@ Technologies : Github, Azure, Prometheus,
 
 5. Display Metrics on endpoint
 - Prometheus
+
+6. Use K6
+- docker run --rm -i grafana/k6 run - <script.js
