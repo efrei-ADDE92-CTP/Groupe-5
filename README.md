@@ -17,13 +17,28 @@ Technologies : Github, Azure, Prometheus,
 - Use secrets
 - Azure :
   - We could have used Azure Devops, generate our token to access to Azure, it's already done by our organisation
-  -
+
+![Dashboard](img/acr.png)
+
   
 4. Deploy it on Azure App
 - Auto-scaling
+- Endpoint : TO ADD
+
+![Dashboard](img/containerapp.png)
 
 5. Display Metrics on endpoint
 - Prometheus
 
-6. Use K6
-- docker run --rm -i grafana/k6 run - <script.js
+6. Load Test
+- Vegeta for CLI
+
+![Dashboard](img/vegeta.png)
+
+- K6 for API
+-> docker run --rm -i grafana/k6 run - <script.js
+
+![Dashboard](img/k6.png)
+
+
+- Octoperf for SaaS
