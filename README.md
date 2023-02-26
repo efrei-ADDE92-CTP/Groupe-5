@@ -25,7 +25,7 @@ Technologies : Github, Azure, Prometheus,
 - Auto-scaling
 - Endpoint : TO ADD
 
-![Dashboard](img/containerapp.png)
+![Dashboard](img/containerapp2.png)
 
 5. Display Metrics on endpoint
 - Prometheus
