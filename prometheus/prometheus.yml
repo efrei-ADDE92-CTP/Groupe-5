@@ -2,7 +2,7 @@ global:
   scrape_interval: 3s
 
   external_labels:
-    monitor: "01-API"
+    monitor: "api.py"
 
 rule_files:
 
@@ -13,4 +13,4 @@ scrape_configs:
 
   - job_name: "API"
     static_configs:
-      - targets: ["app:8080"]
+      - targets: ["app:5000"]
