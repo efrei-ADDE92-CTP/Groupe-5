@@ -1,0 +1,188 @@
+html {
+    background: url(../assets/background.jfif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    margin: 0px;
+    cursor: url(../assets/cursor-bee.png), auto;
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #133a87b3;
+    border-radius: 25px;
+    width: 80%;
+    padding: 40px;
+    align-items: center;
+}
+
+.container {
+    background-color: #133a87b3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1100px;
+    height: 650px;
+    border-radius: 30px;
+}
+
+#submit {
+    background: white;
+    border: none;
+    width: 300px;
+    font-family: fantasy;
+    color: #133a87b3;
+    font-size: 20px;
+    border-radius: 100px;
+    margin-top: 40px;
+    cursor: url(../assets/cursor-bee.png), auto;
+}
+
+#result {
+    font-family: fantasy;
+    color: white;
+    font-weight: lighter;
+}
+
+p {
+    color: white;
+    font-family: fantasy;
+    font-size: 65px;
+    margin: 20px 0px;
+}
+
+label {
+    color: white;
+    font-family: fantasy;
+    font-size: 30px;
+    cursor: url(../assets/cursor-bee.png), auto;
+}
+
+.y {
+    position: absolute;
+    -webkit-animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate bee-spin infinite 20s linear;
+    -moz-animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    -o-animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    animation: moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate, bee-spin infinite 2s linear;
+}
+
+.param {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(255, 213, 0);
+    font-family: fantasy;
+    font-size: 20px;
+    color: rgb(255, 213, 0)
+}
+
+
+@keyframes bee-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@-webkit-keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100vw;
+    }
+}
+
+@-moz-keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100vw;
+    }
+}
+
+@-o-keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100vw;
+    }
+}
+
+@keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: calc(100vw - 330px);
+    }
+}
+
+@-webkit-keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 100vh;
+    }
+}
+
+@-moz-keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 100vh;
+    }
+}
+
+@-o-keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 100vh;
+    }
+}
+
+@keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: calc(100vh - 330px);
+    }
+}
