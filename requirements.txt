@@ -5,3 +5,4 @@ numpy
 seaborn
 flask
 prometheus-client
+joblib

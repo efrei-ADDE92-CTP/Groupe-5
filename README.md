@@ -3,16 +3,16 @@
 Technologies : Github, Azure, Prometheus, 
 
 
-1. Deploy an API 
+<h2>1. Deploy an API</h2> 
 - Python : get predictions of iris classifications using K Nearest Neighbors
 - Create an API
 
-2. Build the docker image
+<h2>2. Build the docker image</h2>
 - On Linux
 - Using Python 3.8
 - Push -> luciebottin/iris-docker
 
-3. Deploy it on the Azure Container Registry (ACR)
+<h2>3. Deploy it on the Azure Container Registry (ACR)</h2>
 - Create a github workflow
 - Use secrets
 - Azure :
@@ -21,16 +21,16 @@ Technologies : Github, Azure, Prometheus,
 ![Dashboard](img/acr.png)
 
   
-4. Deploy it on Azure App
+<h2>4. Deploy it on Azure App</h2>
 - Auto-scaling
 - Endpoint : https://container-app-gr1--zxh954n.icybush-d5d8ff73.westeurope.azurecontainerapps.io
 
 ![Dashboard](img/containerapp2.png)
 
-5. Display Metrics on endpoint
+<h2>5. Display Metrics on endpoint</h2>
 - Prometheus
 
-6. Load Test
+<h2>6. Load Test</h2>
 - Vegeta for CLI
 
 ![Dashboard](img/vegeta.png)
@@ -42,3 +42,5 @@ Technologies : Github, Azure, Prometheus,
 
 
 - Octoperf for SaaS
+
+![Dashboard](img/octoperf.png)
