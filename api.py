@@ -41,6 +41,7 @@ def log_the_status_code(response):
     logging.warning("status as integer %s" % response.status_code)
     return response
 
+
 @app.route('/metrics')
 def metrics():
     return generate_latest()
