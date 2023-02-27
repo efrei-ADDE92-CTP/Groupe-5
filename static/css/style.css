@@ -11,12 +11,45 @@ body {
     cursor: url(../assets/cursor-bee.png), auto;
 }
 
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    padding: 0px 30px;
+}
+
+nav a {
+    font-family: fantasy;
+    background-color: rgb(255, 213, 0);
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
 .screen {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
 }
 
 form {
@@ -49,7 +82,7 @@ form {
     font-size: 20px;
     border-radius: 100px;
     margin-top: 40px;
-    cursor: url(../assets/cursor-bee.png), auto;
+    cursor: url(../assets/cursor-bee.png), pointer;
 }
 
 #result {
@@ -69,7 +102,7 @@ label {
     color: white;
     font-family: fantasy;
     font-size: 30px;
-    cursor: url(../assets/cursor-bee.png), auto;
+    cursor: url(../assets/cursor-bee.png), text;
 }
 
 .y {
