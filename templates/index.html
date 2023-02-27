@@ -1,0 +1,72 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="/metrics">Metrics</a>
+    </nav>
+    <div class="screen">
+        <!-- <div class="x">
+            <img src="../static/assets/bee.png" class="y">
+        </div> -->
+        <div class="container">
+            <p>Queen Bee
+            <div id="result">
+
+            </div>
+            </p>
+            <form id="form">
+                <div class="param">
+                    <label for="sepal_length">Sepal length:</label>
+                    <input type="text" name="sepal_length" placeholder="Insert number" />
+                </div>
+                <div class="param">
+                    <label for="sepal_width">Sepal width:</label>
+                    <input type="text" name="sepal_width" placeholder="Insert number" />
+                </div>
+                <div class="param">
+                    <label for="petal_length">Petal length:</label>
+                    <input type="text" name="petal_length" placeholder="Insert number" />
+                </div>
+                <div class="param">
+                    <label for="petal_width">Petal width:</label>
+                    <input type="text" name="petal_width" placeholder="Insert number" />
+                </div>
+                <button type="submit" id="submit">Predict</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#form').submit(function (e) {
+                e.preventDefault(); // Prevent form submission
+                var formData = $(this).serialize(); // Serialize form data
+                $.ajax({
+                    url: '/predict',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        console.log(response)
+                        // Update result div with prediction
+                        if (response.prediction == 0) {
+                            answer = "an Iris Setosa"
+                        } else if (response.prediction == 1) {
+                            answer = "an Iris Versicolour"
+                        } else if (response.prediction == 2) {
+                            answer = "an Iris Virginica"
+                        } else {
+                            answer = "a mystery"
+                        }
+                        $('#result').html('says it is ' + answer);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>

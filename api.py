@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import logging
-from flask import Flask
+from flask import Flask, render_template
 from flask import request, jsonify
 import joblib
 from prometheus_client import start_http_server, Gauge, Counter, generate_latest
@@ -16,10 +16,15 @@ s = Counter('s_requests', 'Number of sucessful requests')
 f = Counter('f_requests', 'Number of failed requests')
 g = Gauge('success_rate_requests', 'Rate of success requests')
 
+@app.route('/')
+def index():
+    return render_template("index.html") 
+
 @app.route('/predict', methods=['POST'])
 def predict():
+    result = request.form.to_dict(flat=True)
     a.inc()
-    data = request.get_json(force=True)
+    data = result
     df = pd.DataFrame(data, index=[0])
 
     prediction = model.predict(df)
