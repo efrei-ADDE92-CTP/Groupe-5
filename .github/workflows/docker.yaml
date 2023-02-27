@@ -70,11 +70,11 @@ jobs:
               --max-replicas 10 \
               --scale-rule-name my-http-rule \
               --scale-rule-type http \
-              --scale-rule-http-concurrency 10
+              --scale-rule-http-concurrency 100
               az containerapp ingress enable \
               -n container-app-groupe5  \
               -g ${{ secrets.RESOURCE_GROUP }} \
               --type external \
               --allow-insecure \
-              --target-port 80 \
+              --target-port 5000 \
               --transport auto 
