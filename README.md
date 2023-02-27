@@ -23,7 +23,7 @@ Technologies : Github, Azure, Prometheus,
   
 4. Deploy it on Azure App
 - Auto-scaling
-- Endpoint : TO ADD
+- Endpoint : https://container-app-gr1--zxh954n.icybush-d5d8ff73.westeurope.azurecontainerapps.io
 
 ![Dashboard](img/containerapp2.png)
 
