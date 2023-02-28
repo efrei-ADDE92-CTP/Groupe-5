@@ -85,3 +85,8 @@ hey -n 500 -c 100 https://container-app-groupe5--hdpiatt.thankfulgrass-7e1e0d32.
 
 ![Dashboard](img/hey-load-test.png)
 
+- Locust : 100 users
+
+![Dashboard](img/locust-charts.png)
+
+
