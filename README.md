@@ -16,6 +16,57 @@ Python, Flask, Docker, Github, Azure, Prometheus, Locust
 <p>- Use GitHub Actions to automatize the deployment of the docker image on an Azure container App</p>
 <p>- Load testing with the ACA endpoint</p>
 
+<h3>🏡 Code Architecture 🏡</h3>
+
+
+├── api.py
+|
+├── docker-compose.yml
+|
+├── Dockerfile
+|
+├── iris_knn.pkl
+|
+├── script.js
+|
+├── Iris.ipynb
+|
+├── locustfile.py
+|
+├── README.md          <- The top-level README for developers using this project.
+├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
+│                         generated with `pip freeze > requirements.txt`
+│
+├── .github/workflows  <- The worflows for GitHub Actions
+    └── docker.yaml
+|
+├── grafana            <- The worflows for Prometheus
+    └── dashboard.yaml
+    └── datasource.yaml
+|
+├── img                <- The image results
+    └── *.png
+|
+├── prometheus         <- The environment required for Prometeheus
+    ├── data
+        ├── chunks_head
+        ├── wal
+        └── lock
+        └── queries.active
+    └── prometheus.yaml
+|
+├── static             <- The environment for the web front
+    ├── assets
+        └── background.jfif
+        └── bee.png
+        └── cursor-bee.png
+    ├── css
+        └── style.css
+|
+├── templates          <- The environment for the web front
+    └── index.html
+
+
 <h2>Deploy an API</h2> 
 
 - Model to get predictions of iris classifications using K Nearest Neighbors
