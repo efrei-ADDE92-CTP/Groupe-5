@@ -143,10 +143,10 @@ hey -n 500 -c 100 https://container-app-groupe5--hdpiatt.thankfulgrass-7e1e0d32.
 ```
 ![Dashboard](img/hey-load-test.png)
 
-- Locust : 100 users
+- Locust : 10000 users requesting on metrics
 ```
 locust
 ```
-![Dashboard](img/locust-charts.png)
+![Dashboard](img/locust-metrics.png)
 
 
