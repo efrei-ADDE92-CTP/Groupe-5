@@ -18,7 +18,7 @@ Python, Flask, Docker, Github, Azure, Prometheus, Locust
 
 <h3>🏡 Code Architecture 🏡</h3>
 
-
+``
 ├── api.py
 |
 ├── docker-compose.yml
@@ -65,7 +65,7 @@ Python, Flask, Docker, Github, Azure, Prometheus, Locust
 |
 ├── templates          <- The environment for the web front
     └── index.html
-
+``
 
 <h2>Deploy an API</h2> 
 
