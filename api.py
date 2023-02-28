@@ -20,6 +20,7 @@ g = Gauge('success_rate_requests', 'Rate of success requests')
 @app.route('/')
 def index():
     return render_template("index.html") 
+    
 
 @app.route('/predict', methods=['POST'])
 def predict():
