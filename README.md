@@ -10,11 +10,11 @@ Python, Flask, Docker, Github, Azure, Prometheus, Locust
 <h2>Goal : Deploy an iris classifier</h2>
 
 <h3>Overall :</h3> 
-- Export our K Nearest Neighbors Classifier model to joblib
-- Use the exported model to make an API : /metrics and /predict
-- Creation of a docker image with the previous features 
-- Use GitHub Actions to automatize the deployment of the docker image on an Azure container App
-- Load testing with the ACA endpoint
+<p>- Export our K Nearest Neighbors Classifier model to joblib</p>
+<p>- Use the exported model to make an API : /metrics and /predict</p>
+<p>- Creation of a docker image with the previous features </p>
+<p>- Use GitHub Actions to automatize the deployment of the docker image on an Azure container App</p>
+<p>- Load testing with the ACA endpoint</p>
 
 <h2>Deploy an API</h2> 
 
@@ -75,22 +75,25 @@ docker run -p 5000:5000 -t iris-docker:0.0.1
 <h2>Load Test</h2>
 
 - Vegeta for CLI
-
+```docker run --rm -i peterevans/vegeta sh -c \
+```
 ![Dashboard](img/vegeta.png)
 
 - K6 for API
--> docker run --rm -i grafana/k6 run - <script.js
-
+```docker run --rm -i grafana/k6 run - <script.js
+```
 ![Dashboard](img/k6.png)
 
 - Hey : 500 requests for 100 users
-
+```
 hey -n 500 -c 100 https://container-app-groupe5--hdpiatt.thankfulgrass-7e1e0d32.westeurope.azurecontainerapps.io
-
+```
 ![Dashboard](img/hey-load-test.png)
 
 - Locust : 100 users
-
+```
+locust
+```
 ![Dashboard](img/locust-charts.png)
 
 
