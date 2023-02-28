@@ -75,10 +75,6 @@ docker run -p 5000:5000 -t iris-docker:0.0.1
 
 ![Dashboard](img/k6.png)
 
-- Octoperf for SaaS
-
-![Dashboard](img/octoperf.png)
-
 - Hey : 500 requests for 100 users
 
 hey -n 500 -c 100 https://container-app-groupe5--hdpiatt.thankfulgrass-7e1e0d32.westeurope.azurecontainerapps.io
