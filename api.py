@@ -8,6 +8,7 @@ from prometheus_client import start_http_server, Gauge, Counter, generate_latest
 
 app = Flask(__name__)
 
+
 with open('iris_knn.pkl', 'rb') as file:
     model = joblib.load(file)
 
