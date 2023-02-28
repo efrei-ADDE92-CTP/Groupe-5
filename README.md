@@ -75,12 +75,14 @@ docker run -p 5000:5000 -t iris-docker:0.0.1
 <h2>Load Test</h2>
 
 - Vegeta for CLI
-```docker run --rm -i peterevans/vegeta sh -c \
+```
+docker run --rm -i peterevans/vegeta sh -c \
 ```
 ![Dashboard](img/vegeta.png)
 
 - K6 for API
-```docker run --rm -i grafana/k6 run - <script.js
+```
+docker run --rm -i grafana/k6 run - <script.js
 ```
 ![Dashboard](img/k6.png)
 
