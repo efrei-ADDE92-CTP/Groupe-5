@@ -1,12 +1,20 @@
-# Group 5 : Deploy Flask API with DevOps philosophy
+# 🐝 Group 5 : Deploy Flask API with DevOps philosophy 🐝
 
-Lucie Bottin - Céline Khauv - Julie Ngan - Hadi Jamal Ahmad
+Lucie Bottin - Céline Khauv - Hadi Jamal Ahmad - Julie Ngan
 
-M2-APP-BDIA
+M2-APP-BDML
 
 ## Technologies 
-Python, Flask, Docker, Github, Azure, Prometheus
+Python, Flask, Docker, Github, Azure, Prometheus, Locust
 
+<h2>Goal : Deploy an iris classifier</h2>
+
+<h3>Overall :</h3> 
+- Export our K Nearest Neighbors Classifier model to joblib
+- Use the exported model to make an API : /metrics and /predict
+- Creation of a docker image with the previous features 
+- Use GitHub Actions to automatize the deployment of the docker image on an Azure container App
+- Load testing with the ACA endpoint
 
 <h2>Deploy an API</h2> 
 
@@ -26,7 +34,7 @@ Iris Setosa - Iris Versicolour - Iris Virginica
 
 ![Dashboard](img/api.png)
 
-<h2>Deploy on docker</h2>
+<h2>Deploy on docker</h2> 
 
 We used a Dockerfile to build our image and access it on our API
 
@@ -51,10 +59,10 @@ docker run -p 5000:5000 -t iris-docker:0.0.1
 ![Dashboard](img/acr.png)
 
   
-<h2>Deploy it on Azure App</h2>
+<h2>Deploy it on Azure Container App</h2>
 
 - Auto-scaling
-- Endpoint : https://container-app-groupe5--j367g3w.lemonocean-711ecbc7.westeurope.azurecontainerapps.io
+- Endpoint : https://container-app-groupe5--hdpiatt.thankfulgrass-7e1e0d32.westeurope.azurecontainerapps.io/
 
 ![Dashboard](img/containerapp2.png)
 
